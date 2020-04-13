@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 calculator = new BMICalculator(CalculationMode.METRIC);
             else
                 throw new Exception("Error with radio buttons.");
-            bmi = calculator.calculateBMI(Double.parseDouble(String.valueOf(w)),
-                                          Double.parseDouble(String.valueOf(h)));
+            bmi = calculator.calculateBMI(Double.parseDouble(w.getText().toString()),
+                                          Double.parseDouble(h.getText().toString()));
         }
         catch(Exception e) {
             Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
