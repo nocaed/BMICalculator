@@ -2,6 +2,7 @@ package com.example.bmicalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter BMI first.", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(getApplicationContext(), "Second activity not established yet", Toast.LENGTH_SHORT).show();
+                Double bmi = new Double(bmiResultTV.getText().toString());
+                Intent adviceIntent = new Intent(MainActivity.this, AdviceActivity.class);
+                adviceIntent.putExtra("bmi", bmi);
+                startActivity(adviceIntent);
+                //Toast.makeText(getApplicationContext(), "Second activity not established yet", Toast.LENGTH_SHORT).show();
             }
         });
     }
