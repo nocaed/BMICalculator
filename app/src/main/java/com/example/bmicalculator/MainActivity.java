@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO load results activity, replace this toast call when second activity
                 //  is implemented
+                if (bmiResultTV.length() < 1) {
+                    Toast.makeText(getApplicationContext(), "Please enter BMI first.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Toast.makeText(getApplicationContext(), "Second activity not established yet", Toast.LENGTH_SHORT).show();
             }
         });
