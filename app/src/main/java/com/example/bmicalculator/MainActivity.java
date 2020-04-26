@@ -1,3 +1,6 @@
+/**
+ * @authors Thomas Brewer and Michael McLaughlin
+ */
 package com.example.bmicalculator;
 
 import androidx.appcompat.app.AppCompatActivity;

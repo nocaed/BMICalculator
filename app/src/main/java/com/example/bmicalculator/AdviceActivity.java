@@ -1,3 +1,6 @@
+/**
+ * @authors Thomas Brewer and Michael McLaughlin
+ */
 package com.example.bmicalculator;
 
 import android.graphics.Color;
@@ -16,9 +19,12 @@ public class AdviceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_advice);
         setTitle("Advice based on the BMI");
 
+        //Pulls the related info from the established intent to determine which screen to display
         Intent adviceIntent = getIntent();
         bmi = adviceIntent.getDoubleExtra("bmi", 10.0);
 
+        //Switch case cannot be used here unfortunately
+        //Displays the appropriate screen based on which category the user falls into
         if (bmi < 18.5) {
             TextView adviceTextTV = (TextView) findViewById(R.id.adviceText);
             adviceTextTV.setBackgroundColor(Color.BLUE);
