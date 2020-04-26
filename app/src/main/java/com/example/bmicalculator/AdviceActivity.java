@@ -19,12 +19,6 @@ public class AdviceActivity extends AppCompatActivity {
         Intent adviceIntent = getIntent();
         bmi = adviceIntent.getDoubleExtra("bmi", 10.0);
 
-        /* Big Oof.  Why Java Why
-        switch (bmi) {
-
-        }
-        */
-
         if (bmi < 18.5) {
             TextView adviceTextTV = (TextView) findViewById(R.id.adviceText);
             adviceTextTV.setBackgroundColor(Color.BLUE);

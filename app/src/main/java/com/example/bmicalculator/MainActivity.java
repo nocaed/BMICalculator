@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // calculate the bmi and display it to the user
                 DecimalFormat formatter = new DecimalFormat("0.##");
-                //bmiResultTV.setText(formatter.format(Double.toString(calculateBMI(weightET, heightET, customaryRB,
-                //                    metricRB))));
 
                 bmiResultTV.setText(formatter.format(calculateBMI(weightET, heightET, customaryRB, metricRB)));
             }
@@ -44,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         adviceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO load results activity, replace this toast call when second activity
-                //  is implemented
                 if (bmiResultTV.length() < 1) {
                     Toast.makeText(getApplicationContext(), "Please enter BMI first.", Toast.LENGTH_SHORT).show();
                     return;
@@ -54,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent adviceIntent = new Intent(MainActivity.this, AdviceActivity.class);
                 adviceIntent.putExtra("bmi", bmi);
                 startActivity(adviceIntent);
-                //Toast.makeText(getApplicationContext(), "Second activity not established yet", Toast.LENGTH_SHORT).show();
             }
         });
     }
