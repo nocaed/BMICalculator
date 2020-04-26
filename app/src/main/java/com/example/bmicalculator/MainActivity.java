@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,8 +33,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // calculate the bmi and display it to the user
-                bmiResultTV.setText(Double.toString(calculateBMI(weightET, heightET, customaryRB,
-                                    metricRB)));
+                DecimalFormat formatter = new DecimalFormat("0.##");
+                //bmiResultTV.setText(formatter.format(Double.toString(calculateBMI(weightET, heightET, customaryRB,
+                //                    metricRB))));
+
+                bmiResultTV.setText(formatter.format(calculateBMI(weightET, heightET, customaryRB, metricRB)));
             }
         });
 
